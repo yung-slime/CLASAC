@@ -1,0 +1,99 @@
+body {
+  background-color: #e8ebe4;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b8bacf;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 15px;
+}
+
+.navbar-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.navbar-item {
+  position: relative;
+  z-index: 1;
+  width: 70px;
+}
+
+.navbar-item a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  font-weight: 500;
+  color: #b8bacf;
+  text-decoration: none;
+  gap: 20px;
+}
+
+.navbar-item-icon {
+  position: relative;
+  display: block;
+  line-height: 50px;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.navbar-item-text {
+  line-height: 40px;
+  position: absolute;
+  opacity: 0;
+  top: 30px;
+  transition: 0.4s;
+  color: #02182b;
+  font-family: "Bruno Ace SC", cursive;
+}
+
+.navbar-item.active a span img, .navbar-item:active a span img {
+  transform: translateY(-28px);
+}
+
+.navbar-item.active a .navbar-item-text, .navbar-item:active a .navbar-item-text {
+  transform: translateY(-20px);
+  opacity: 1;
+}
+
+.indicator {
+  box-sizing: border-box;
+  background-color: #d2d5dd;
+  position: absolute;
+  top: -50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 45%;
+  transition: 0.5s;
+  border: 5px solid #e8ebe4;
+}
+
+.navbar-list li:nth-child(1).active ~ .indicator {
+  transform: translateX(0px);
+}
+
+.navbar-list li:nth-child(2).active ~ .indicator {
+  transform: translateX(70px);
+}
+
+.navbar-list li:nth-child(3).active ~ .indicator {
+  transform: translateX(140px);
+}
+
+.navbar-list li:nth-child(4).active ~ .indicator {
+  transform: translateX(210px);
+}/*# sourceMappingURL=styles.css.map */
