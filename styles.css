@@ -1,5 +1,7 @@
 body {
   background-color: #e8ebe4;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-container {
@@ -96,4 +98,10 @@ body {
 
 .navbar-list li:nth-child(4).active ~ .indicator {
   transform: translateX(210px);
-}/*# sourceMappingURL=styles.css.map */
+}
+
+#reader{
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
