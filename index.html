@@ -9,14 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>    
+    <script src="script.js" defer></script>   
+    <script src="scanner.js" defer></script> 
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <title>navbar-prototype.</title>
 </head>
 
 <body>
     <nav class="navbar-container">
         <ul class="navbar-list">
-            <li class="navbar-item active">
+            <li class="navbar-item home active">
                 <a href="#home">
                     <span>
                         <img class="navbar-item-icon" src="svgs/home.svg" alt="home">
@@ -25,27 +27,26 @@
                 </a>
             </li>
 
-            <li class="navbar-item">
+            <li class="navbar-item download">
                 <a href="#download">
                     <span>
                         <img class="navbar-item-icon" src="svgs/download.svg" alt="download">
                     </span>
                     <span class="navbar-item-text">download</span>
-
                 </a>
             </li>
 
-            <li class="navbar-item">
+            <li class="navbar-item camera">
                 <a href="#camera">
                     <span>
-                        <img class="navbar-item-icon" src="svgs/camera.svg" alt="">
+                        <img id="camera" class="navbar-item-icon" src="svgs/camera.svg" alt="camera">
                     </span>
                     <span class="navbar-item-text">camera</span>
                 </a>
 
             </li>
 
-            <li class="navbar-item">
+            <li class="navbar-item profile">
                 <a href="#profile">
                     <span>
                         <img class="navbar-item-icon" src="svgs/profile.svg" alt="profile">
@@ -55,8 +56,13 @@
             </li>
             <div class="indicator"></div>
         </ul>
-        
     </nav>
-</body>
+    <main>
+        <div id="reader" width="600px">
+        </div>
+    </main>
+
+    
+
 
 </html>
