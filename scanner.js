@@ -36,7 +36,7 @@ camera.addEventListener("click", () => {
       scannerObj.start(rearCameras[0].id, {
         fps: 30,
         qrbox: 200,
-        aspectRatio: "9:16" // 16:9 aspect ratio
+        aspectRatio: 0.5625 // 16:9 aspect ratio
       }, onScanSuccess, onScanFailure);
     } else {
       messageEl.textContent = 'No rear camera found';
