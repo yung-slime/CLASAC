@@ -26,7 +26,7 @@ function onScanFailure(error) {
 // code to design ui by ourselves. le ggo.
 
 Html5Qrcode.getCameras().then(cameras => {
-  const rearCameras = cameras.filter(camera => camera.facingMode === 'environment');
+  const rearCameras = cameras.filter(camera => camera.label.toLowerCase().includes('back'));
   if (rearCameras.length > 0) {
     const scannerObj = new Html5Qrcode("reader", true);
     scannerObj.start(rearCameras[0].id, {
