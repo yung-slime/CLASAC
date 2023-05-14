@@ -1,7 +1,12 @@
 const messageEl = document.querySelector("#output");
-const camera = document.querySelector(".camera");
 const reader = document.querySelector("#reader");
-console.log(reader.clientWidth)
+
+
+const camera = document.querySelector(".camera");
+const home = document.querySelector(".home")
+const download = document.querySelector(".download")
+const profile = document.querySelector(".profile")
+
 
 function onScanSuccess(decodedText, decodedResult) {
   console.log(`Code matched = ${decodedText}`, decodedResult);
@@ -41,5 +46,33 @@ camera.addEventListener("click", () => {
   });
 })
 
+home.addEventListener("click", () => {
+  html5QrCode.stop().then((ignore) => {
+    // QR Code scanning is stopped.
+    messageEl.textContent = ignore
+  }).catch((err) => {
+    // Stop failed, handle it.
+    messageEl.textContent = err
+  });
+})
 
+profile.addEventListener("click", () => {
+  html5QrCode.stop().then((ignore) => {
+    // QR Code scanning is stopped.
+    messageEl.textContent = ignore
+  }).catch((err) => {
+    // Stop failed, handle it.
+    messageEl.textContent = err
+  });
+})
+
+download.addEventListener("click", () => {
+  html5QrCode.stop().then((ignore) => {
+    // QR Code scanning is stopped.
+    messageEl.textContent = ignore
+  }).catch((err) => {
+    // Stop failed, handle it.
+    messageEl.textContent = err
+  });
+})
 
