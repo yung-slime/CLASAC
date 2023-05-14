@@ -25,34 +25,19 @@ function onScanFailure(error) {
 
 // code to design ui by ourselves. le ggo.
 
-// the constructor 
-Html5Qrcode.getCameras().then(devices => {
-  // Use the ID of the first camera in the list
-  const cameraId = devices[1].id;
-  messageEl.textContent = `Camera ID: ${cameraId}`
-
+Html5Qrcode.getCameras().then(cameras => {
+  const rearCameras = cameras.filter(camera => camera.facingMode === 'environment');
+  if (rearCameras.length > 0) {
+    const scannerObj = new Html5Qrcode("reader", true);
+    scannerObj.start(rearCameras[0].id, {
+      fps: 10,
+      qrbox: 250
+    }, onScanSuccess, onScanFailure);
+  } else {
+    messageEl.textContent = 'No rear camera found';
+  }
 }).catch(err => {
-
-  messageEl.textContent = "error";
-
+  messageEl.textContent = err;
 });
-
-
-// const scannerObj = new Html5Qrcode("reader", true)
-
-// scannerObj.start(
-//   "facing back", 
-//   { fps: 30, qrbox: { width: 250, height: 250 } },
-//   onScanSuccess,
-//   onScanFailure
-// ).then(
-//   () => {
-//     messageEl.textContent = "success";
-//   }
-// ).catch(
-//   () => {
-//     messageEl.textContent = "error occured.";
-//   }
-// )
 
 
