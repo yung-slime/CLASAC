@@ -26,21 +26,33 @@ function onScanFailure(error) {
 // code to design ui by ourselves. le ggo.
 
 // the constructor 
-const scannerObj = new Html5Qrcode("reader", true)
+Html5Qrcode.getCameras().then(devices => {
+  // Use the ID of the first camera in the list
+  const cameraId = devices[0].deviceId;
+  messageEl.textContent = `Camera ID: ${cameraId}`
 
-scannerObj.start(
-  "facing back", 
-  { fps: 30, qrbox: { width: 250, height: 250 } },
-  onScanSuccess,
-  onScanFailure
-).then(
-  () => {
-    messageEl.textContent = "success";
-  }
-).catch(
-  () => {
-    messageEl.textContent = "error occured.";
-  }
-)
+}).catch(err => {
+
+  messageEl.textContent = "error";
+
+});
+
+
+// const scannerObj = new Html5Qrcode("reader", true)
+
+// scannerObj.start(
+//   "facing back", 
+//   { fps: 30, qrbox: { width: 250, height: 250 } },
+//   onScanSuccess,
+//   onScanFailure
+// ).then(
+//   () => {
+//     messageEl.textContent = "success";
+//   }
+// ).catch(
+//   () => {
+//     messageEl.textContent = "error occured.";
+//   }
+// )
 
 
