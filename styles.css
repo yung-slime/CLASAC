@@ -6,6 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
   background-color: #b8bacf;
   position: fixed;
   bottom: 0;
@@ -104,7 +105,7 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  min-width: 100%;
+  width: 100%;
   min-height: 100%;
 }
 

@@ -1,5 +1,7 @@
 const messageEl = document.querySelector("#output");
 const camera = document.querySelector(".camera");
+const reader = document.querySelector("#reader");
+console.log(reader.clientWidth)
 
 function onScanSuccess(decodedText, decodedResult) {
   console.log(`Code matched = ${decodedText}`, decodedResult);
