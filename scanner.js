@@ -6,13 +6,10 @@ console.log(reader.clientWidth)
 function onScanSuccess(decodedText, decodedResult) {
   console.log(`Code matched = ${decodedText}`, decodedResult);
   window.location.href = decodedResult;
-
   messageEl.textContent = "success";
-
 }
 
 function onScanFailure(error) {
-
   console.warn(`Code scan error = ${error}`);
   messageEl.textContent = "error occured.";
 }
@@ -34,7 +31,7 @@ camera.addEventListener("click", () => {
       scannerObj.start(rearCameras[0].id, {
         fps: 30,
         qrbox: 200,
-        aspectRatio: 1.7778 // 16:9 aspect ratio
+        aspectRatio: "9:16" // 16:9 aspect ratio
       }, onScanSuccess, onScanFailure);
     } else {
       messageEl.textContent = 'No rear camera found';
