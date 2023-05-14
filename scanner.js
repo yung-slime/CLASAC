@@ -28,7 +28,7 @@ function onScanFailure(error) {
 // the constructor 
 Html5Qrcode.getCameras().then(devices => {
   // Use the ID of the first camera in the list
-  const cameraId = devices[0].deviceId;
+  const cameraId = devices;
   messageEl.textContent = `Camera ID: ${cameraId}`
 
 }).catch(err => {
