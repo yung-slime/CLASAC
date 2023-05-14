@@ -1,5 +1,5 @@
-const messageEl = document.querySelector("#output")
-
+const messageEl = document.querySelector("#output");
+const camera = document.querySelector(".camera");
 
 function onScanSuccess(decodedText, decodedResult) {
   console.log(`Code matched = ${decodedText}`, decodedResult);
@@ -24,21 +24,23 @@ function onScanFailure(error) {
 
 
 // code to design ui by ourselves. le ggo.
+camera.addEventListener("click", () => {
+  Html5Qrcode.getCameras().then(cameras => {
+    const rearCameras = cameras.filter(camera => camera.label.toLowerCase().includes('back'));
+    if (rearCameras.length > 0) {
+      const scannerObj = new Html5Qrcode("reader", true);
+      scannerObj.start(rearCameras[0].id, {
+        fps: 30,
+        qrbox: 200,
+        aspectRatio: 1.7778 // 16:9 aspect ratio
+      }, onScanSuccess, onScanFailure);
+    } else {
+      messageEl.textContent = 'No rear camera found';
+    }
+  }).catch(err => {
+    messageEl.textContent = err;
+  });
+})
 
-Html5Qrcode.getCameras().then(cameras => {
-  const rearCameras = cameras.filter(camera => camera.label.toLowerCase().includes('back'));
-  if (rearCameras.length > 0) {
-    const scannerObj = new Html5Qrcode("reader", true);
-    scannerObj.start(rearCameras[0].id, {
-      fps: 30,
-      qrbox: 200,
-      aspectRatio: 1.7778 // 16:9 aspect ratio
-    }, onScanSuccess, onScanFailure);
-  } else {
-    messageEl.textContent = 'No rear camera found';
-  }
-}).catch(err => {
-  messageEl.textContent = err;
-});
 
 
