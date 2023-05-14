@@ -1,5 +1,5 @@
 const messageEl = document.querySelector("#output")
-console.log(messageEl)
+
 
 function onScanSuccess(decodedText, decodedResult) {
   console.log(`Code matched = ${decodedText}`, decodedResult);
@@ -27,9 +27,20 @@ function onScanFailure(error) {
 
 // the constructor 
 const scannerObj = new Html5Qrcode("reader", true)
+
 scannerObj.start(
   "facing back", 
   { fps: 30, qrbox: { width: 250, height: 250 } },
   onScanSuccess,
   onScanFailure
+).then(
+  () => {
+    messageEl.textContent = "success";
+  }
+).catch(
+  () => {
+    messageEl.textContent = "error occured.";
+  }
 )
+
+

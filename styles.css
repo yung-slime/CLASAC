@@ -97,4 +97,11 @@ body {
 
 .navbar-list li:nth-child(4).active ~ .indicator {
   transform: translateX(210px);
+}
+
+#output {
+  color: #02182b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=styles.css.map */
