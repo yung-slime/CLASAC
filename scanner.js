@@ -47,7 +47,7 @@ camera.addEventListener("click", () => {
 })
 
 home.addEventListener("click", () => {
-  html5QrCode.stop().then((ignore) => {
+  Html5Qrcode.stop().then((ignore) => {
     // QR Code scanning is stopped.
     messageEl.textContent = ignore
   }).catch((err) => {
@@ -57,7 +57,7 @@ home.addEventListener("click", () => {
 })
 
 profile.addEventListener("click", () => {
-  html5QrCode.stop().then((ignore) => {
+  Html5Qrcode.stop().then((ignore) => {
     // QR Code scanning is stopped.
     messageEl.textContent = ignore
   }).catch((err) => {
@@ -67,7 +67,7 @@ profile.addEventListener("click", () => {
 })
 
 download.addEventListener("click", () => {
-  html5QrCode.stop().then((ignore) => {
+  Html5Qrcode.stop().then((ignore) => {
     // QR Code scanning is stopped.
     messageEl.textContent = ignore
   }).catch((err) => {
