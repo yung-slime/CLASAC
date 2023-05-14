@@ -1,7 +1,6 @@
 
 function onScanSuccess(decodedText, decodedResult) {
   console.log(`Code matched = ${decodedText}`, decodedResult);
-
   window.location.href = decodedResult;
 
 }
@@ -22,14 +21,10 @@ html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 // code to design ui by ourselves. le ggo.
 
 // the constructor 
-const scannerObj = new Html5Qrcode("reader", true);
-
-scannerObj.getCameras().then(
-  (response) => {
-    console.log(`response obj: ${response}`)
-  }
-).catch(
-  (err) => {
-    console.log(`err occured : ${err}`)
-  }
+const scannerObj = new Html5Qrcode("reader", true)
+scannerObj.start(
+  "facing back", 
+  { fps: 30, qrbox: { width: 250, height: 250 } },
+  onScanSuccess,
+  onScanFailure
 )
