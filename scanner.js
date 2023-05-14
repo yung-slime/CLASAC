@@ -30,8 +30,9 @@ Html5Qrcode.getCameras().then(cameras => {
   if (rearCameras.length > 0) {
     const scannerObj = new Html5Qrcode("reader", true);
     scannerObj.start(rearCameras[0].id, {
-      fps: 10,
-      qrbox: 250
+      fps: 30,
+      qrbox: 200,
+      aspectRatio: 1.7778 // 16:9 aspect ratio
     }, onScanSuccess, onScanFailure);
   } else {
     messageEl.textContent = 'No rear camera found';
