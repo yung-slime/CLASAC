@@ -1,13 +1,18 @@
+const messageEl = document.querySelector("#output")
+console.log(messageEl)
 
 function onScanSuccess(decodedText, decodedResult) {
   console.log(`Code matched = ${decodedText}`, decodedResult);
   window.location.href = decodedResult;
+
+  messageEl.textContent = "success";
 
 }
 
 function onScanFailure(error) {
 
   console.warn(`Code scan error = ${error}`);
+  messageEl.textContent = "error occured.";
 }
 
 
