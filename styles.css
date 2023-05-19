@@ -100,18 +100,9 @@ body {
   transform: translateX(210px);
 }
 
-#reader {
-  border: none;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+video {
   width: 100%;
-  min-height: 100%;
-}
-
-#output {
-  color: #02182b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=styles.css.map */
