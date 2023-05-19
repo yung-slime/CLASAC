@@ -107,4 +107,5 @@ video {
   height: 100vh;
   -o-object-fit: fill;
      object-fit: fill;
+  overflow: hidden;
 }/*# sourceMappingURL=styles.css.map */
