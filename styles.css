@@ -129,4 +129,6 @@ video {
 
 .status {
   font-family: "Bruno Ace SC", cursive;
+  width: -moz-fit-content;
+  width: fit-content;
 }/*# sourceMappingURL=styles.css.map */
