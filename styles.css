@@ -115,5 +115,18 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: 1% 0;
+}
+
+.statusLoader {
+  margin: 15px 0;
+  max-width: 100%;
+  background-color: #b8bacf;
+  padding: 0 15px;
+  border-radius: 10px;
+}
+
+.status {
+  font-family: "Bruno Ace SC", cursive;
 }/*# sourceMappingURL=styles.css.map */

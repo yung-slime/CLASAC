@@ -1,5 +1,9 @@
+const scanBtn = document.querySelector(".camera");
+const statusIndicator = document.querySelector(".status")
+
 function onSuccessCallback(result) {
   console.log(`here's the result: ${result}.`);
+  statusIndicator.textContent = result;
 }
 
 function onErrorCallback(error) {
@@ -8,8 +12,8 @@ function onErrorCallback(error) {
 const scanConfig = {
   fps: 20,
   qrbox: {
-    width: 250,
-    height: 250,
+    width: 180,
+    height: 180,
   },
 }
 
@@ -47,7 +51,7 @@ async function startScanner() {
     // const activeCameraDeviceId = await getCameraId();
     // we dont need deviceId if facingmode is specified.
 
-    
+
     scanner.start({ facingMode: "environment" }, scanConfig, onSuccessCallback, onErrorCallback);
   }
   catch (error) {
@@ -55,7 +59,8 @@ async function startScanner() {
   }
 }
 
-const scanBtn = document.querySelector(".camera");
+
+
 scanBtn.addEventListener('click', startScanner);
 
 
