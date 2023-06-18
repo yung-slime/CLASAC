@@ -11,6 +11,8 @@ $componentAccentColor: #d2d5dd
 
 body
     background-color: $bgColor
+    margin: 0
+
 
 .navbar-container
     +dsply-flx
@@ -93,10 +95,18 @@ body
 .navbar-list li:nth-child(4).active ~ .indicator
     transform: translateX(70px * 3)
 
-video
-    margin: 0
-    padding: 0
+#scanner
     width: 100%
-    height: 100vh
-    object-fit: fill
-    overflow: hidden
+    
+
+video
+    max-width: 100%
+    object-fit: contain
+
+.container
+    +dsply-flx
+    margin: 1% 0
+
+
+
+
