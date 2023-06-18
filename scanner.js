@@ -44,14 +44,16 @@ async function getCameraId() {
 async function startScanner() {
   try {
     const scanner = new Html5Qrcode("scanner", scanSetupConfig);
-    const activeCameraDeviceId = await getCameraId();
-    scanner.start(activeCameraDeviceId, scanConfig, onSuccessCallback, onErrorCallback);
+    // const activeCameraDeviceId = await getCameraId();
+    // we dont need deviceId if facingmode is specified.
+
+    
+    scanner.start({ facingMode: "environment" }, scanConfig, onSuccessCallback, onErrorCallback);
   }
   catch (error) {
     console.error(`error occured while starting scanner. error: ${error}.`)
   }
 }
-
 
 const scanBtn = document.querySelector(".camera");
 scanBtn.addEventListener('click', startScanner);
